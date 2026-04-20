@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Typing Effect</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #bg {
+            transition: background 0.4s ease-out;
+        }
+
+        #bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            backdrop-filter: blur(60px);
+        }
+
+        .big-text {
+            font-size: 2.2rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease;
+        }
+
+        .big-text.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+        }
+
+        #hint {
+            transition: opacity 0.5s ease;
+        }
+
+        #hint.hide {
+            opacity: 0;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="text-white overflow-hidden">
+    <div id="bg" class="fixed inset-0 -z-10"></div>
+
+    <div id="wrapper" class="transition-transform duration-[1400ms] ease-[cubic-bezier(0.77,0,0.18,1)]">
+
+        <section class="h-screen flex items-center justify-center text-center px-6">
+            <div class="max-w-sm">
+                <p id="typing1" class="text-base leading-relaxed opacity-90"></p>
+            </div>
+            <div id="hint" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs opacity-60 animate-pulse">
+                ↓ klik bawah untuk lanjut
+            </div>
+        </section>
+
+        <section class="h-screen flex items-center justify-center text-center px-6">
+            <div class="max-w-sm">
+                <p id="typing2" class="text-base leading-relaxed opacity-90"></p>
+            </div>
+        </section>
+
+        <section class="h-screen flex items-center justify-center text-center px-6">
+            <div class="max-w-sm">
+                <p id="typing3" class="text-base leading-relaxed opacity-90"></p>
+            </div>
+        </section>
+        <section class="h-screen flex items-center justify-center text-center px-6">
+            <div class="max-w-sm">
+                <p id="typing4" class="text-base leading-relaxed opacity-90"></p>
+            </div>
+        </section>
+        <section class="h-screen flex items-center justify-center text-center px-6">
+            <div class="max-w-sm">
+                <p id="typing5" class="text-base leading-relaxed opacity-90"></p>
+            </div>
+        </section>
+        <section class="h-screen flex items-center justify-center text-center px-6">
+            <div class="max-w-md space-y-4">
+
+                <!-- typing terakhir -->
+                <p id="typing-last" class="text-base opacity-90"></p>
+
+                <!-- ucapan utama -->
+                <h1 id="final-text" class="big-text text-glow">
+                    Selamat Ulang Tahun, Cinta
+                </h1>
+
+                <!-- penutup -->
+                <p id="closing-text" class="opacity-0 transition-opacity duration-700">
+                   Semoga semua impian yang kamu punya bisa tercapai, satu persatu
+                </p>
+
+            </div>
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
