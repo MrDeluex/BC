@@ -100,7 +100,7 @@ function updateBackground() {
 window.addEventListener("scroll", updateBackground);
 
 // === FUNCTION TYPING (REUSABLE) ===
-function typeText(element, text, speed = 40) {
+function typeText(element, text, speed = 60) {
   let i = 0;
   element.textContent = ""; // reset dulu
 
